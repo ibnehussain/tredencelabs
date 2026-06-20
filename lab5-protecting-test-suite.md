@@ -18,7 +18,7 @@ The most insidious AI-induced UAT regression is not Copilot touching production 
 
 ---
 
-### Part A — Experience the Danger First (8 min)
+### Part A — Experience the Danger First
 
 **Step 1:** Verify your Day 1 baseline
 
@@ -54,29 +54,27 @@ _________________________________________________________________
 
 ---
 
-### Part B — Write a Safe Test Generation Prompt (10 min)
+### Part B — Use a Safe Test Generation Prompt
 
-The `get_activity()` endpoint you built in Lab 4 has no tests yet. Write a safe prompt that adds tests without touching existing ones.
+The `get_activity()` endpoint you built in Lab 4 has no tests yet. Use a safe prompt that adds tests without touching existing ones.
 
 **Your four-part test generation prompt:**
 
 ```
-Task:
+Add new unit tests for the get_activity() route to src/tests/test_app.py.
 
+Task: Write pytest test functions that cover:
+  1. Valid activity name → returns 200 and full details
+  2. Unknown activity name → returns 404 and {"error": "Activity not found"}
+  3. Empty string name → returns 404
 
+Scope: Add these as NEW functions at the BOTTOM of test_app.py, after all
+existing tests. Do NOT modify, delete, or rename any existing test function.
 
+Constraint: Use the Flask test client. Each test must assert both status
+code AND response body. Do not touch src/app.py.
 
-Scope:
-
-
-
-
-Constraint:
-
-
-
-
-Format:
+Format: Three separate test functions, each named test_get_activity_[scenario].
 
 
 ```
@@ -122,7 +120,7 @@ git commit -m "test: add tests for get_activity endpoint
 
 ---
 
-### Part C — Coverage Delta Gate in CI (5 min)
+### Part C — Coverage Delta Gate in CI
 
 The coverage gate is already configured in the training repo's GitHub Actions. Verify it works.
 
@@ -191,4 +189,3 @@ Copy the generated description. Save it for later — you will use it when you o
 - [ ] Coverage gate verified — PR blocked when test removed
 - [ ] PR description includes all five sections including AI attribution
 
-**Trainer/Lead sign-off:** _______________________ ✓
