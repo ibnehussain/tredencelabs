@@ -26,7 +26,7 @@ mkdir -p .github/skills
 
 **Step 2:** Create your SKILL.md at `.github/skills/add-activity-endpoint.md`
 
-Fill in every section. Use the structure below — do not leave any `[placeholder]` unfilled.
+Do not leave any `[placeholder]` unfilled.
 
 ```markdown
 # Skill: Add Activity Endpoint
@@ -88,7 +88,7 @@ git push
 **Step 2:** Invoke the skill from Copilot Chat
 
 ```
-@workspace Using the skill in .github/skills/add-activity-endpoint.md,
+Using the skill in .github/skills/add-activity-endpoint.md,
 add a new endpoint GET /activities/{name}/is-full that returns
 {"activity": name, "is_full": true/false} based on whether the
 activity has reached its max_participants limit.
@@ -122,25 +122,6 @@ pytest src/tests/test_app.py -v
 
 ---
 
-### Part C — Peer Review (5 min)
-
-Swap your SKILL.md with the person next to you. Review theirs:
-
-```
-Reviewer: _______________________
-
-□ CONSTRAINTS section present? (mandatory — reject if missing)
-□ All 3 UAT-locked functions listed by name?
-□ test_app.py listed as locked?
-□ DRI assigned?
-□ Version number present?
-□ Deprecation policy present?
-□ Anti-triggers specified (when NOT to use)?
-
-One improvement you would make:
-_________________________________________________________________
-```
-
 ---
 
 ### ✅ LAB 6 GATE CHECKPOINT
@@ -150,6 +131,5 @@ _________________________________________________________________
 - [ ] CONSTRAINTS section names all 3 UAT-locked functions explicitly
 - [ ] DRI, version, and deprecation policy all present
 - [ ] Skill invoked — Copilot's response observed and evaluated
-- [ ] Peer review completed — reviewer signed the checklist above
 
 **Trainer/Lead sign-off:** _______________________ ✓
