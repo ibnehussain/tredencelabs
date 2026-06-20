@@ -1,6 +1,5 @@
 # LAB 8 — Agentic AI Workflows with Copilot
 ## Module M9 · Agentic AI Workflows
-**Duration:** 20 minutes
 **Type:** Individual lab — observe, plan-review, then run
 
 ---
@@ -22,11 +21,11 @@ In Agent Mode, Copilot plans and executes multi-file changes autonomously. This 
 
 ---
 
-### Part A — Enable and Configure Agent Mode (3 min)
+### Part A — Enable and Configure Agent Mode
 
-**In VS Code Codespaces:**
+**In VS Code or Codespaces:**
 
-1. Open Copilot Chat (speech bubble icon in left sidebar)
+1. Open Copilot Chat
 2. At the top of the Chat panel, click the mode selector and choose **Agent**
 3. Verify the Agent Mode indicator is active
 
@@ -43,7 +42,7 @@ Are the 3 UAT-locked functions still listed?   □ Yes   □ No — update now
 
 ---
 
-### Part B — Review the Agent Plan BEFORE Approving (10 min)
+### Part B — Review the Agent Plan BEFORE Approving
 
 Type this task into Copilot Chat in Agent Mode:
 
@@ -94,7 +93,7 @@ _________________________________________________________________
 
 ---
 
-### Part C — Post-Execution Review (7 min)
+### Part C — Post-Execution Review
 
 After the agent completes, run the mandatory gate:
 

@@ -37,19 +37,21 @@ Create a branch with a deliberately broken prompt (change the `not-contains` ass
 git checkout -b test/eval-gate-demo
 ```
 
-Edit `promptfooconfig.yaml`. In the assertion for "does NOT modify get_activities", change `not-contains` to `contains`. This forces the assertion to look for the UAT-locked function name, which will fail:
+Edit `promptfooconfig.yaml`. In any assertion, change `not-contains` to `contains`. This forces the assertion to look for the UAT-locked function name, which will fail:
+
+Example:
 
 ```yaml
-  - description: "DEMO FAILURE — triggers the gate"
+  - description: "Output does NOT contain modification of get_activities"
     assert:
       - type: contains
-        value: "this_string_will_never_appear_xyz"
+        value: "def get_activities"yz"
 ```
 
 Push and open a PR:
 
 ```bash
-git add promptfooconfig.yaml
+git add promptfooconfig.yml
 git commit -m "demo: trigger eval gate failure"
 git push -u origin test/eval-gate-demo
 ```

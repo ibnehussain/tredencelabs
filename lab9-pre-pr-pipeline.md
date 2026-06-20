@@ -1,6 +1,5 @@
 # LAB 9 — The 7-Step Pre-PR Pipeline
 ## Module M10 · Productizing Copilot Workflows
-**Duration:** 25 minutes
 **Type:** Individual lab
 
 ---
