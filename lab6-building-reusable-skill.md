@@ -1,7 +1,6 @@
 # LAB 6 — Building a Reusable SKILL.md
 ## Module M6 · Building Reusable Skills
-**Duration:** 25 minutes
-**Type:** Individual lab → Peer review
+**Type:** Individual lab 
 
 ---
 
@@ -17,7 +16,7 @@ A SKILL.md encodes a reusable Copilot pattern — what it does, when to use it, 
 
 ---
 
-### Part A — Create the Skill File (12 min)
+### Part A — Use the Skill File 
 
 **Step 1:** Create the skills directory
 
@@ -33,56 +32,45 @@ Fill in every section. Use the structure below — do not leave any `[placeholde
 # Skill: Add Activity Endpoint
 
 ## Description
-[Write one paragraph: what this skill does, which codebase it applies to,
-and what kind of endpoint it creates. Be specific about the Mergington API.]
+Adds a new Flask route to the Mergington activities API (src/app.py).
+Use when adding any new GET, POST, or DELETE endpoint that reads or
+modifies the ACTIVITIES dictionary.
 
 ## Trigger
-Use this skill when asked to:
-- [Trigger phrase 1 — e.g. "add a new endpoint"]
-- [Trigger phrase 2]
-- [Trigger phrase 3]
-
-Do NOT use this skill when:
-- [Anti-trigger 1 — e.g. "modifying an existing endpoint"]
+Use when asked to: "add a new endpoint", "add a new route", "implement
+an API for [feature name]" in the Mergington activities codebase.
 
 ## Constraints
-
 ### NEVER_MODIFY — UAT-locked
-The following have passed UAT and must NOT be changed when using this skill:
-
-- `get_activities()` — [describe what this does]
-- `signup()` — [describe what this does]
-- `remove_signup()` — [describe what this does]
-- All existing functions in `src/tests/test_app.py`
+- get_activities() in src/app.py
+- signup() in src/app.py
+- remove_signup() in src/app.py
+- All existing functions in src/tests/test_app.py
 
 ### Forbidden operations
-- [Forbidden op 1 — e.g. restructure the ACTIVITIES dictionary]
-- [Forbidden op 2 — e.g. add new top-level imports without lead approval]
-- [Forbidden op 3 — e.g. change existing function signatures]
+- Do not restructure the ACTIVITIES dictionary
+- Do not add new top-level imports without lead approval
+- Do not change existing function signatures
 
 ### Required test outcomes
-- All existing tests must pass after this skill is used
-- New endpoint must have at least one new test added
+- All existing tests must pass after the skill is used
+- New tests must be added for new functionality
 - Coverage must not drop
 
 ## Examples
-
-### Input prompt
-"Add GET /activities/{name}/participants — return only the participant list"
+### Input
+"Add GET /activities/{name}/participants that returns the participant list"
 
 ### Expected output structure
-[Describe in 2-3 sentences what correct output looks like:
-where the function is placed, what it returns, what HTTP codes it uses]
+A single new Flask route function below remove_signup() that uses
+jsonify() and returns HTTP 200 or 404.
 
-## DRI (Directly Responsible Individual)
-[Your name] — [your team]
-
+## DRI
+Tech Lead — [name]
 ## Version
-v1.0 — [today's date]
+v1.0 — [date]
 
-## Deprecation policy
-[Write one sentence: when will this skill be retired or updated?
-e.g. "Review quarterly. Update NEVER_MODIFY list when new endpoints pass UAT."]
+
 ```
 
 ---

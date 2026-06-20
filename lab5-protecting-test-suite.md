@@ -158,7 +158,7 @@ git push origin --delete test/coverage-drop-demo
 
 ---
 
-### Part D — PR Description with AI Attribution (2 min)
+### Part D — PR Description with AI Attribution
 
 Generate a PR description for your Lab 5 work using Copilot Chat:
 
