@@ -1,6 +1,5 @@
 # LAB M8 — RAG · Text2SQL · CI/CD Integration
 ## Module M8 · Model Development
-**Duration:** 45 minutes
 **Type:** Lecture / Demo → Individual lab
 
 ---
@@ -57,7 +56,7 @@ Write a Python function that searches a knowledge base and returns the top 3 res
 Record the output:
 
 ```
-Did Copilot make up a KB interface?   □ Yes — invented API   □ No — asked for schema
+Did Copilot make up a KB interface?   □ Yes  □ No 
 
 Did the output match any real file in your repo?   □ No (expected)   □ Yes
 
@@ -74,7 +73,7 @@ _________________________________________________________________
 Now open the relevant source files in your editor. In Copilot Chat, attach your repo context and type:
 
 ```
-@workspace Using the actual project structure and existing modules visible in this repo,
+Using the actual project structure and existing modules visible in this repo,
 write a Python function that searches the activities knowledge base and returns
 the top 3 matching activity names for a given query string.
 
@@ -108,8 +107,6 @@ _________________________________________________________________
 
 # PART B — RAG with Copilot Extensions & Custom Knowledge Base
 ## Lab 2 · Build KB Extension → Run RAGAS Eval → Gate on Faithfulness
-**Time:** 15 min
-
 ---
 
 ### Background: What is RAG in this context?
@@ -171,7 +168,7 @@ Create `src/rag/activities_kb.json` — a minimal knowledge base for the Merging
 Use Copilot Chat with context attached:
 
 ```
-@workspace Using src/rag/activities_kb.json as the knowledge base,
+Using src/rag/activities_kb.json as the knowledge base,
 generate src/rag/kb_search.py with a function named search_kb.
 
 Task: search_kb(query: str, top_k: int = 3) → list[dict]
@@ -202,8 +199,13 @@ Did results look relevant for the sample queries?   □ Yes   □ Partially   �
 
 Create `src/rag/eval_rag.py`. Use Copilot to generate it:
 
+> **No OpenAI key? Use GitHub Models instead.**
+> GitHub Copilot users get access to models via `https://models.inference.ai.azure.com`
+> using your existing `GITHUB_TOKEN`. No separate API key required.
+> In GitHub Actions, `GITHUB_TOKEN` is injected automatically — no secret to configure.
+
 ```
-@workspace Generate src/rag/eval_rag.py — a RAGAS faithfulness eval harness
+Generate src/rag/eval_rag.py — a RAGAS faithfulness eval harness
 for the search_kb function in src/rag/kb_search.py.
 
 Task: For each test case below, call search_kb to retrieve context chunks,
@@ -216,7 +218,10 @@ Test cases:
 3. query: "which activity allows most participants" → expected context contains "30"
 4. query: "is there a daily activity"            → expected context contains "Daily"
 
-Constraint: Use OPENAI_API_KEY from environment. Do NOT hardcode keys.
+Constraint: Read the API key from environment variable GITHUB_TOKEN (preferred)
+            OR OPENAI_API_KEY as fallback. Do NOT hardcode any key.
+            When using GITHUB_TOKEN, set openai_api_base to
+            https://models.inference.ai.azure.com
 Output: Print each test case result and overall faithfulness score.
         Exit with code 1 if faithfulness < 0.85.
 Format: Script with run_ragas_eval() function and __main__ block.
@@ -228,9 +233,14 @@ Install RAGAS if not already present:
 pip install ragas openai
 ```
 
-Run the eval:
+Run the eval — choose the option that matches your setup:
 
 ```bash
+# Option 1 — GitHub Copilot users (GITHUB_TOKEN, no extra key needed)
+# Get your token: https://github.com/settings/tokens → classic → read:models scope
+GITHUB_TOKEN=<your-github-token> python src/rag/eval_rag.py
+
+# Option 2 — OpenAI key (if you have one)
 OPENAI_API_KEY=<your-key> python src/rag/eval_rag.py
 ```
 
@@ -279,7 +289,9 @@ jobs:
 
       - name: Run RAGAS faithfulness eval
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # GITHUB_TOKEN is injected automatically — no secret to configure.
+          # eval_rag.py reads GITHUB_TOKEN first, falls back to OPENAI_API_KEY.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python src/rag/eval_rag.py
           echo "✅ RAG faithfulness gate passed (≥ 0.85)"
