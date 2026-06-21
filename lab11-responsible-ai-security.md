@@ -79,7 +79,7 @@ Any of these patterns found in src/app.py?   □ No — all clean
 
 ---
 
-### Part B — Verify GHAS Security Scan (2 min)
+### Part B — Verify GHAS Security Scan
 
 The security scan runs as Step 5 in your pre-PR pipeline. Verify it is active:
 
