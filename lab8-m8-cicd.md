@@ -237,7 +237,7 @@ Run the eval — choose the option that matches your setup:
 
 ```bash
 # Option 1 — GitHub Copilot users (GITHUB_TOKEN, no extra key needed)
-# Get your token: https://github.com/settings/tokens → classic → read:models scope
+# Get your token: https://github.com/settings/tokens → Generate new token (classic) → no special scope required
 GITHUB_TOKEN=<your-github-token> python src/rag/eval_rag.py
 
 # Option 2 — OpenAI key (if you have one)
