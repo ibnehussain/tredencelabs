@@ -318,7 +318,6 @@ git push
 
 # PART C — Text-to-SQL via Copilot
 ## Lab 3 · Write 5 NL → SQL Tests · Eval Correctness ≥ 90%
-**Time:** 12 min
 
 ---
 
@@ -367,7 +366,7 @@ CREATE TABLE signups (
 Open Copilot Chat with `src/text2sql/schema.sql` attached:
 
 ```
-@workspace Using only the schema in src/text2sql/schema.sql,
+Using only the schema in src/text2sql/schema.sql,
 generate parameterised SQL for these 5 natural language questions.
 
 For each question, output:

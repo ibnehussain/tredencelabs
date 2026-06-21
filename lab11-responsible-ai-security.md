@@ -1,7 +1,6 @@
 # LAB 10 — Responsible AI, Security & Team Governance
 ## Module M11 · Responsible AI, Security & Compliance
-**Duration:** 15 minutes
-**Type:** Individual review → Group workshop (pairs or threes)
+**Type:** Individual review
 
 ---
 

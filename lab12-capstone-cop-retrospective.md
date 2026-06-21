@@ -1,7 +1,5 @@
 # LAB 11 — Capstone & CoP Retrospective
 ## Module M12 · Productivity Metrics & End-to-End Workflow
-**Duration:** 15 minutes
-**Type:** Peer demo + Individual retrospective
 
 ---
 
@@ -11,7 +9,7 @@ Demonstrate your complete end-to-end workflow to a peer. Document one AI code-qu
 
 ---
 
-### Part A — Peer Demo (7 min)
+### Part A — Peer Demo
 
 Swap with the person next to you. Each person gets 3 minutes to demonstrate. The question is not "is the code perfect?" — it is "does the pipeline protect UAT?"
 
