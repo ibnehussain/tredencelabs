@@ -7,9 +7,9 @@
 > **What this document is**
 > The capstone project brings together every module of the training programme into one coherent deliverable. Participants work in teams of 2–3 to extend the Mergington activities API with an AI-powered question-answering layer, protected by every gate built across Day 1 and Day 2. The output is not just working code — it is an AI-assisted feature with a complete audit trail, eval scorecard, and Community of Practice KB entry.
 >
-> **Estimated time:** 3–4 hours (standalone session) or last session of Day 2
-> **Team size:** 2–3 participants
-> **Repo:** The same `copilot-training-demo` repo from all previous labs
+> **Estimated time:** 3–4 hours (standalone session)
+> **Team size:** 2–3 participants(Optional)
+> **Repo:** The same repo from all previous labs
 > **Prerequisite:** Labs 1–11 complete on both Day 1 and Day 2
 
 ---
@@ -1092,5 +1092,3 @@ Accept a local eval pass + passing pytest run as a valid alternative if the CI c
 
 ---
 
-*Capstone Project v1.0 · GitHub Copilot Training Programme*
-*DRI: [Training lead name] · Review: after each delivery cohort*
